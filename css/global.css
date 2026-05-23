@@ -305,9 +305,11 @@ footer { background: var(--navy-deep); padding: 80px 0 32px; border-top: 1px sol
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
   .section { padding: 84px 0; }
+  nav .container { padding: 0 24px; }
 }
 @media (max-width: 768px) {
-  nav { padding: 10px 0; }
+  nav { padding: 14px 0; }
+  nav .container { padding: 0 20px; }
   .nav-logo-img { height: 36px; }
   .section { padding: 72px 0; }
   .footer-top { grid-template-columns: 1fr; gap: 36px; }
