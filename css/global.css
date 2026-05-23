@@ -130,6 +130,11 @@ body {
 .page-hero {
   animation: heroSectionFade 1s cubic-bezier(0.22,1,0.36,1) both;
 }
+/* Utility classes — add to hero label/title/sub/actions elements */
+.hero-anim-label   { animation: heroFadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.10s both; }
+.hero-anim-title   { animation: heroFadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.25s both; }
+.hero-anim-sub     { animation: heroFadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.42s both; }
+.hero-anim-actions { animation: heroFadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.56s both; }
 
 /* ─── SCROLL PROGRESS ─── */
 .scroll-progress {

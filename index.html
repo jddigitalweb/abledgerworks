@@ -59,14 +59,12 @@
 
 
   .hero-label {
-    animation: heroFadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.1s both;
   }
   .hero-headline {
     font-family: var(--font-display);
     font-size: clamp(2.8rem, 5.5vw, 4.8rem);
     color: var(--white); line-height: 1.12; margin-bottom: 22px;
     letter-spacing: -0.01em; font-weight: 400;
-    animation: heroFadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.25s both;
   }
   .hero-headline em { color: var(--accent-light); font-style: normal; }
 
@@ -91,12 +89,10 @@
     font-family: var(--font-body);
     font-size: 1.05rem; font-weight: 400; color: rgba(255,255,255,0.72);
     line-height: 1.85; max-width: 52ch; margin: 0 auto 34px; letter-spacing: 0.01em;
-    animation: heroFadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.42s both;
   }
 
   .hero-actions {
     display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
-    animation: heroFadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.56s both;
   }
 
   /* ═══════════════════════════════════════
@@ -465,8 +461,8 @@
   <div class="hero-overlay"></div>
   <div class="container">
     <div class="hero-content">
-      <div class="hero-label">Your Extended Global Team</div>
-      <h1 class="hero-headline">
+      <div class="hero-label hero-anim-label">Your Extended Global Team</div>
+      <h1 class="hero-headline hero-anim-title">
         Expert Financial Services,
         <span class="hero-rotator-wrap">
           <span class="hero-rotator-item active">Delivered Offshore.</span>
@@ -475,8 +471,8 @@
           <span class="hero-rotator-item">On Time, Every Time.</span>
         </span>
       </h1>
-      <p class="hero-sub">Reliable, detail-driven accounting support delivering accurate, CPA-ready books with global standards of professionalism and care.</p>
-      <div class="hero-actions">
+      <p class="hero-sub hero-anim-sub">Reliable, detail-driven accounting support delivering accurate, CPA-ready books with global standards of professionalism and care.</p>
+      <div class="hero-actions hero-anim-actions">
         <a href="#services" class="btn btn-primary">Explore Services</a>
         <a href="#cta" class="btn btn-glass">Book a Consultation</a>
       </div>
