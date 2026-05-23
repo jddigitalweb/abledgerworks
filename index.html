@@ -882,8 +882,9 @@
       <div>
         <div class="cta-form-card">
           <div class="cta-form-title">Request a Free Consultation</div>
-          <form name="home-consultation" method="POST" netlify>
+          <form name="home-consultation" method="POST" netlify netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="home-consultation">
+            <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
             <div class="form-group">
               <label>Full Name</label>
               <input type="text" name="name" placeholder="Jane Smith">
