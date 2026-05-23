@@ -118,6 +118,15 @@ body {
 }
 .btn-navy:hover { background: var(--navy-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(27,44,94,0.38); }
 
+/* ─── PAGE TRANSITION ─── */
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+body {
+  animation: pageFadeIn 0.35s ease both;
+}
+
 /* ─── HERO ANIMATIONS (shared across all pages) ─── */
 @keyframes heroFadeUp {
   from { opacity: 0; transform: translateY(32px); filter: blur(4px); }

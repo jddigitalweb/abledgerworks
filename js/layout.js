@@ -204,6 +204,18 @@
       });
     });
 
+    /* ─── PAGE TRANSITION: fade out before navigating ─── */
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a[href]');
+      if (!link) return;
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || /^https?:\/\//.test(href) || link.target === '_blank') return;
+      e.preventDefault();
+      document.body.style.transition = 'opacity 0.25s ease';
+      document.body.style.opacity = '0';
+      setTimeout(() => { window.location.href = href; }, 260);
+    });
+
   });
 
 })();
