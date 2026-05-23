@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="css/global.css">
+<link rel="preload" as="image" href="images/about.webp" type="image/webp">
 <script src="js/layout.js" defer></script>
 <style>
 
@@ -16,7 +17,7 @@
   .about-hero {
     position: relative; height: 100vh; min-height: 560px;
     display: flex; align-items: center; overflow: hidden;
-    background-image: url('images/about.jpg');
+    background-image: url('images/about.webp');
     background-size: cover; background-position: center 35%;
   }
   .about-hero-overlay {
@@ -408,7 +409,7 @@
       </div>
 
       <div class="who-visual">
-        <img src="images/about-section.jpg" alt="AB LedgerWorks at work">
+        <picture><source srcset="images/about-section.webp" type="image/webp"><img src="images/about-section.jpg" alt="AB LedgerWorks at work" loading="lazy"></picture>
       </div>
 
     </div>
@@ -520,7 +521,7 @@
     <!-- Mohit — photo left, content right -->
     <div class="team-profile">
       <div class="team-profile-photo">
-        <img src="images/mohit.png" alt="CA Mohit Asawa">
+        <picture><source srcset="images/mohit.webp" type="image/webp"><img src="images/mohit.png" alt="CA Mohit Asawa" loading="lazy"></picture>
       </div>
       <div class="team-profile-content">
         <div class="team-role-label">Co-Founder</div>
@@ -546,7 +547,7 @@
   <div class="container">
     <div class="team-profile flip">
       <div class="team-profile-photo">
-        <img src="images/mohit.png" alt="CA Naveen Bhura">
+        <picture><source srcset="images/mohit.webp" type="image/webp"><img src="images/mohit.png" alt="CA Naveen Bhura" loading="lazy"></picture>
       </div>
       <div class="team-profile-content">
         <div class="team-role-label">Co-Founder</div>
@@ -571,7 +572,7 @@
   <div class="container">
     <div class="team-profile">
       <div class="team-profile-photo">
-        <img src="images/muskan.jpg" alt="CA Muskan Bhura">
+        <img src="images/muskan.jpg" alt="CA Muskan Bhura" loading="lazy">
       </div>
       <div class="team-profile-content">
         <div class="team-role-label">Co-Founder</div>

@@ -206,13 +206,36 @@
       }
     });
 
-    /* ─── SMOOTH SCROLL for anchor links ─── */
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    /* ─── LENIS SMOOTH SCROLL ─── */
+    const lenisScript = document.createElement('script');
+    lenisScript.src = 'https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js';
+    lenisScript.onload = function () {
+      const lenis = new Lenis({
+        duration: 0.9,
+        easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        touchMultiplier: 1.5,
       });
-    });
+
+      function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+
+      // Anchor links use lenis instead of native scrollIntoView
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const target = document.querySelector(a.getAttribute('href'));
+          if (target) { e.preventDefault(); lenis.scrollTo(target, { offset: -80 }); }
+        });
+      });
+
+      // Pause lenis while mobile menu is open to avoid conflicts
+      document.getElementById('hamburger').addEventListener('click', () => {
+        setTimeout(() => {
+          document.getElementById('mobileMenu').classList.contains('active')
+            ? lenis.stop() : lenis.start();
+        }, 10);
+      });
+    };
+    document.head.appendChild(lenisScript);
 
   });
 
