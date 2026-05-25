@@ -80,7 +80,7 @@
         <p class="footer-brand-desc">Your offshore finance partner — delivering precision accounting, CFO-level advisory, and scalable financial solutions to US and global businesses.</p>
         <div class="footer-social">
           <a href="https://www.linkedin.com/company/ab-ledgerworks-llp/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="mailto:hello@abledgerworks.com" title="Email" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+          <a href="mailto:info@abledgerworks.com" title="Email" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
         </div>
       </div>
 
@@ -111,7 +111,7 @@
         <div class="footer-col-title">Contact</div>
         <div class="footer-contact-item">
           <i class="fa-solid fa-envelope contact-icon"></i>
-          <a href="mailto:hello@abledgerworks.com">hello@abledgerworks.com</a>
+          <a href="mailto:info@abledgerworks.com">info@abledgerworks.com</a>
         </div>
         <div class="footer-contact-item">
           <i class="fa-brands fa-whatsapp contact-icon"></i>
@@ -119,7 +119,7 @@
         </div>
         <div class="footer-contact-item">
           <i class="fa-solid fa-location-dot contact-icon"></i>
-          <span>Surat, India</span>
+          <span>540-542, Golden Plaza, Ring Road, Surat, Gujarat - 395002</span>
         </div>
       </div>
 
