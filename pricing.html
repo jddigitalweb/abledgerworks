@@ -70,77 +70,109 @@
     text-align: center; margin: 0 auto 72px;
   }
 
+  .pricing-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; align-items: stretch;
+  }
+
   .plan-card {
-    max-width: 860px; margin: 0 auto;
     background: var(--white);
     border: 1px solid var(--grey-200);
     border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: 0 8px 48px rgba(27,44,94,0.10);
-    display: grid; grid-template-columns: 1fr 1fr;
+    box-shadow: 0 8px 32px rgba(27,44,94,0.08);
+    display: flex; flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .plan-card:hover { transform: translateY(-6px); box-shadow: 0 20px 56px rgba(27,44,94,0.14); }
+
+  .plan-card.featured {
+    background: var(--navy-deep);
+    border-color: var(--navy);
+    box-shadow: 0 8px 40px rgba(27,44,94,0.28);
   }
 
-  .plan-card-left {
-    padding: 52px 48px;
-    display: flex; flex-direction: column; justify-content: space-between;
+  .plan-card-top {
+    padding: 40px 36px 32px;
+    flex: 1;
   }
-  .plan-price-row {
-    display: flex; align-items: flex-end; gap: 4px;
-    margin-bottom: 28px;
+
+  .plan-badge {
+    display: none;
   }
-  .plan-currency {
-    font-family: var(--font-body); font-size: 1.5rem; font-weight: 600;
-    color: var(--accent-dark); margin-bottom: 10px;
+  .plan-badge.badge-default {
+    color: var(--accent-dark); background: var(--accent-glow);
+    border: 1px solid rgba(201,168,76,0.25);
   }
-  .plan-amount {
-    font-family: var(--font-display); font-size: clamp(3rem, 5vw, 4.2rem);
-    color: var(--accent-dark); font-weight: 400; line-height: 1;
-    letter-spacing: -0.03em;
+  .plan-badge.badge-featured {
+    color: var(--navy-deep); background: var(--accent);
+    border: 1px solid var(--accent);
   }
-  .plan-per {
-    font-family: var(--font-body); font-size: 0.9rem; font-weight: 400;
-    color: var(--grey-800); margin-bottom: 8px; margin-left: 6px;
+
+  .plan-icon-wrap {
+    width: 52px; height: 52px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
   }
+  .plan-icon-wrap.ico-blue   { background: #EFF6FF; }
+  .plan-icon-wrap.ico-blue   i { color: #2563EB; }
+  .plan-icon-wrap.ico-gold   { background: rgba(201,168,76,0.15); }
+  .plan-icon-wrap.ico-gold   i { color: var(--accent-dark); }
+  .plan-icon-wrap.ico-teal   { background: #F0FDFA; }
+  .plan-icon-wrap.ico-teal   i { color: #0D9488; }
+  .plan-icon-wrap i { font-size: 1.2rem; }
+
   .plan-name {
     font-family: var(--font-display);
-    font-size: 2.2rem;
-    color: var(--navy); font-weight: 400;
-    line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px;
+    font-size: 1.75rem;
+    font-weight: 400; line-height: 1.15;
+    letter-spacing: -0.02em; margin-bottom: 28px;
   }
-  .plan-tagline {
-    font-family: var(--font-body); font-size: 1.05rem; font-weight: 400;
-    color: var(--grey-800); line-height: 1.85; margin-bottom: 36px;
-  }
-  .plan-note {
-    font-family: var(--font-body); font-size: 0.92rem;
-    color: var(--grey-800); margin-top: 14px; line-height: 1.6;
-    opacity: 0.7;
-  }
+  .plan-card:not(.featured) .plan-name { color: var(--navy); }
+  .plan-card.featured .plan-name { color: var(--white); }
 
-  .plan-card-right {
-    background: var(--off-white);
-    border-left: 1px solid var(--grey-100);
-    padding: 52px 44px;
-    display: flex; flex-direction: column; justify-content: center;
-  }
-  .plan-includes-label {
-    font-family: var(--font-body); font-size: 0.88rem; font-weight: 700;
-    letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--accent-dark); margin-bottom: 28px;
-  }
   .plan-features {
-    display: flex; flex-direction: column; gap: 24px;
+    display: flex; flex-direction: column; gap: 16px;
+    margin-bottom: 28px;
   }
   .plan-feature {
-    display: flex; align-items: flex-start; gap: 16px;
-    font-family: var(--font-body); font-size: 1.05rem; font-weight: 400;
-    color: var(--grey-800); line-height: 1.6;
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--font-body); font-size: 0.95rem; font-weight: 400;
+    line-height: 1.6;
   }
+  .plan-card:not(.featured) .plan-feature { color: var(--grey-800); }
+  .plan-card.featured .plan-feature { color: rgba(255,255,255,0.80); }
+
   .plan-feature-icon {
-    flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
-    background: var(--accent); display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
   }
-  .plan-feature-icon i { font-size: 0.55rem; color: var(--navy-deep); }
+  .plan-card:not(.featured) .plan-feature-icon { background: var(--accent); }
+  .plan-card.featured .plan-feature-icon { background: rgba(201,168,76,0.30); }
+  .plan-feature-icon i { font-size: 0.5rem; color: var(--navy-deep); display: block; line-height: 1; }
+  .plan-card.featured .plan-feature-icon i { color: var(--accent-light); }
+
+  .plan-suited-wrap {
+    border-top: 1px solid;
+    padding-top: 20px; margin-top: 4px;
+  }
+  .plan-card:not(.featured) .plan-suited-wrap { border-color: var(--grey-100); }
+  .plan-card.featured .plan-suited-wrap { border-color: rgba(255,255,255,0.10); }
+
+  .plan-suited-label {
+    font-family: var(--font-body); font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px;
+  }
+  .plan-card:not(.featured) .plan-suited-label { color: var(--accent-dark); }
+  .plan-card.featured .plan-suited-label { color: var(--accent-light); }
+
+  .plan-suited-text {
+    font-family: var(--font-body); font-size: 0.88rem; font-weight: 400;
+    line-height: 1.7;
+  }
+  .plan-card:not(.featured) .plan-suited-text { color: var(--grey-600); }
+  .plan-card.featured .plan-suited-text { color: rgba(255,255,255,0.55); }
+
 
   /* ═══════════════════════════════════════
      FAQ ACCORDION
@@ -226,16 +258,16 @@
   }
   @media (max-width: 1024px) {
     .pricing-hero-content { padding-top: 100px; }
-    .plan-name { font-size: clamp(1.8rem, 3vw, 2.2rem); }
+    .pricing-grid { grid-template-columns: 1fr 1fr; }
     .pricing-cta-title { font-size: clamp(2.2rem, 4vw, 2.8rem); }
     .faq-q { font-size: 1.15rem; }
   }
   @media (max-width: 900px) {
     .pricing-hero { height: 85vh; min-height: 420px; }
-    .plan-card { grid-template-columns: 1fr; }
-    .plan-card-right { border-left: none; border-top: 1px solid var(--grey-100); }
-    .plan-card-left, .plan-card-right { padding: 40px 32px; }
     .faq-list { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .pricing-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 768px) {
     .pricing-hero-content { padding-top: 80px; }
@@ -269,38 +301,71 @@
   <div class="container">
 
     <div class="pricing-intro">
-      <div class="section-label">Our Plan</div>
-      <h2 class="section-title" style="text-align:center;">One Clear Rate. Every Service.</h2>
-      <p class="section-subtitle" style="margin:0 auto;">Whether you need bookkeeping support, financial reporting, or CFO-level advisory — it all runs at one consistent hourly rate.</p>
+      <div class="section-label">Engagement Models</div>
+      <h2 class="section-title" style="text-align:center;">Choose How You Work With Us.</h2>
+      <p class="section-subtitle" style="margin:0 auto;">Flexible engagement models built around your business — whether you need full-time support, on-demand help, or a scoped project.</p>
     </div>
 
-    <div class="plan-card">
+    <div class="pricing-grid">
 
-      <div class="plan-card-left">
-        <div>
-          <div class="plan-price-row">
-            <span class="plan-currency">$</span>
-            <span class="plan-amount">12</span>
-            <span class="plan-per">/ hour</span>
+      <!-- Card 1: Full-Time Growth Partner -->
+      <div class="plan-card">
+        <div class="plan-card-top">
+          <div class="plan-badge badge-default"><i class="fa-solid fa-circle"></i> Ongoing</div>
+          <div class="plan-icon-wrap ico-blue"><i class="fa-solid fa-user-tie"></i></div>
+          <div class="plan-name">Full-Time Growth Partner</div>
+          <div class="plan-features">
+            <div class="plan-feature"><span class="plan-feature-icon"><i class="fa-solid fa-check"></i></span><span>Dedicated Accounting &amp; Finance Expert</span></div>
+            <div class="plan-feature"><span class="plan-feature-icon"><i class="fa-solid fa-check"></i></span><span>Seamless Integration with Your Operations</span></div>
+            <div class="plan-feature"><span class="plan-feature-icon"><i class="fa-solid fa-check"></i></span><span>Continuous Support for Scalable Growth</span></div>
           </div>
-          <div class="plan-name">Standard Hourly Plan</div>
-          <p class="plan-tagline">One predictable rate across every service we offer — transparent, flexible, and built around your needs.</p>
-        </div>
-        <div>
-          <a href="contact.html" class="btn btn-primary">Book a Free Consultation</a>
-          <p class="plan-note">Minimum hours may vary by project scope. Contact us to discuss your needs.</p>
+          <div class="plan-suited-wrap">
+            <div class="plan-suited-label">Best Suited For</div>
+            <p class="plan-suited-text">Businesses and accounting firms looking for ongoing offshore accounting, bookkeeping, Virtual CFO, and financial management support.</p>
+          </div>
         </div>
       </div>
 
-      <div class="plan-card-right">
-        <div class="plan-includes-label">What's included</div>
-        <div class="plan-features">
-          <div class="plan-feature"><span class="plan-feature-icon"><i class="fa-solid fa-check"></i></span><span>One rate covers everything — bookkeeping, CFO advisory,<br>payroll, reporting, and more.</span></div>
-          <div class="plan-feature"><span class="plan-feature-icon"><i class="fa-solid fa-check"></i></span><span>Every invoice includes a detailed timesheet so you always<br>know exactly what was done and when.</span></div>
-          <div class="plan-feature"><span class="plan-feature-icon"><i class="fa-solid fa-check"></i></span><span>No retainers, no lock-in. Scale your hours up or down<br>each month as your needs change.</span></div>
+      <!-- Card 2: Pay As You Go (Featured) -->
+      <div class="plan-card featured">
+        <div class="plan-card-top">
+          <div class="plan-badge badge-featured"><i class="fa-solid fa-circle"></i> Flexible</div>
+          <div class="plan-icon-wrap ico-gold"><i class="fa-solid fa-bolt"></i></div>
+          <div class="plan-name">Pay As You Go</div>
+          <div class="plan-features">
+            <div class="plan-feature"><span class="plan-feature-icon"><i class="fa-solid fa-check"></i></span><span>Flexible Support Based on Your Workload</span></div>
+            <div class="plan-feature"><span class="plan-feature-icon"><i class="fa-solid fa-check"></i></span><span>Quick Turnaround for Short-Term Requirements</span></div>
+            <div class="plan-feature"><span class="plan-feature-icon"><i class="fa-solid fa-check"></i></span><span>Scalable Assistance Without Long-Term Commitment</span></div>
+          </div>
+          <div class="plan-suited-wrap">
+            <div class="plan-suited-label">Best Suited For</div>
+            <p class="plan-suited-text">Startups, growing businesses, and firms requiring occasional bookkeeping, audit support, or financial advisory assistance.</p>
+          </div>
         </div>
       </div>
 
+      <!-- Card 3: Fixed Budget Engagement -->
+      <div class="plan-card">
+        <div class="plan-card-top">
+          <div class="plan-badge badge-default"><i class="fa-solid fa-circle"></i> Project-Based</div>
+          <div class="plan-icon-wrap ico-teal"><i class="fa-solid fa-handshake"></i></div>
+          <div class="plan-name">Fixed Budget Engagement</div>
+          <div class="plan-features">
+            <div class="plan-feature"><span class="plan-feature-icon"><i class="fa-solid fa-check"></i></span><span>Clear Scope with Transparent Pricing</span></div>
+            <div class="plan-feature"><span class="plan-feature-icon"><i class="fa-solid fa-check"></i></span><span>Structured Processes &amp; Defined Deliverables</span></div>
+            <div class="plan-feature"><span class="plan-feature-icon"><i class="fa-solid fa-check"></i></span><span>Cost-Effective Execution with Predictable Timelines</span></div>
+          </div>
+          <div class="plan-suited-wrap">
+            <div class="plan-suited-label">Best Suited For</div>
+            <p class="plan-suited-text">Businesses seeking a structured engagement for accounting cleanup, audit assistance, financial reporting, or specific finance projects.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:48px;">
+      <a href="contact.html" class="btn btn-primary" style="font-size:1rem;padding:16px 40px;">Get Started →</a>
     </div>
 
   </div>
@@ -319,33 +384,43 @@
     <div class="faq-list">
 
       <div class="faq-item">
-        <div class="faq-q">Is there a minimum commitment or contract?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
-        <div class="faq-body"><p class="faq-a">We work on a flexible basis — no long-term contracts required. Engagements are scoped per project or on an ongoing monthly basis, depending on your needs.</p></div>
+        <div class="faq-q">Which engagement model is right for me?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
+        <div class="faq-body"><p class="faq-a">It depends on your needs. If you need ongoing, day-to-day accounting and finance support, the Full-Time Growth Partner model is ideal. If your workload is irregular or occasional, Pay As You Go offers maximum flexibility. For defined projects with a clear scope — such as a cleanup or audit — Fixed Budget Engagement works best.</p></div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-q">How are hours tracked and billed?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
-        <div class="faq-body"><p class="faq-a">We track hours transparently and provide a detailed timesheet with every invoice. You'll always know exactly what work was done and how long it took.</p></div>
+        <div class="faq-q">Can I switch between engagement models?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
+        <div class="faq-body"><p class="faq-a">Yes. As your business grows or your requirements change, we can transition you between models with minimal disruption. We'll work with you to find the most suitable arrangement at each stage.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How does the Full-Time Growth Partner model work?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
+        <div class="faq-body"><p class="faq-a">You get a dedicated finance professional embedded into your operations — handling your bookkeeping, reporting, payroll, and advisory needs on a continuous basis. They work as an extension of your team, aligned to your tools, processes, and timelines.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Is there a minimum commitment for Pay As You Go?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
+        <div class="faq-body"><p class="faq-a">Pay As You Go is designed to be flexible — there's no long-term commitment required. You can engage us for a specific task, a short-term project, or on an as-needed basis without any ongoing obligation.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How is a Fixed Budget Engagement scoped and priced?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
+        <div class="faq-body"><p class="faq-a">We begin with a discovery call to understand your requirements, then provide a clear proposal outlining the scope, deliverables, timeline, and cost. Everything is agreed upfront — no surprises, no scope creep without your approval.</p></div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">What accounting platforms do you support?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
-        <div class="faq-body"><p class="faq-a">We work across QuickBooks Online, Xero, Sage, AppFolio, Yardi, and more. If you use a different platform, just let us know — we're adaptable.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Can I adjust the hours month to month?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
-        <div class="faq-body"><p class="faq-a">Absolutely. We understand that business needs fluctuate. You can scale your engagement up or down as required, with advance notice.</p></div>
+        <div class="faq-body"><p class="faq-a">We work natively across QuickBooks Online, Xero, Sage, Zoho Books, AppFolio, Yardi, NetSuite, and more. If you use a different platform, just let us know — we're highly adaptable.</p></div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">Who will I be working with?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
-        <div class="faq-body"><p class="faq-a">You'll have a dedicated point of contact — a qualified professional who understands your business and takes ownership of your engagement from start to finish.</p></div>
+        <div class="faq-body"><p class="faq-a">You'll have a dedicated point of contact — a qualified Chartered Accountant or finance professional who understands your business and takes full ownership of your engagement from start to finish.</p></div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">How do I get started?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
-        <div class="faq-body"><p class="faq-a">Simply book a free 30-minute consultation and we'll take it from there. No forms, no pressure — just a straightforward conversation about how we can help.</p></div>
+        <div class="faq-body"><p class="faq-a">Book a free 30-minute consultation and we'll take it from there. We'll understand your needs, recommend the right engagement model, and outline the next steps — no pressure, no obligation.</p></div>
       </div>
 
     </div>
