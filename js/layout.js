@@ -206,7 +206,24 @@
       }
     });
 
-    /* ─── LENIS SMOOTH SCROLL ─── */
+    /* ─── SMOOTH SCROLL (immediate fallback + Lenis upgrade) ─── */
+    // Delegated handler fires instantly — before Lenis CDN loads
+    document.addEventListener('click', e => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const href = a.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      if (window._lenis) {
+        window._lenis.scrollTo(target, { offset: -80 });
+      } else {
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+
     const lenisScript = document.createElement('script');
     lenisScript.src = 'https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js';
     lenisScript.onload = function () {
@@ -215,17 +232,10 @@
         easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         touchMultiplier: 1.5,
       });
+      window._lenis = lenis;
 
       function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
       requestAnimationFrame(raf);
-
-      // Anchor links use lenis instead of native scrollIntoView
-      document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-          const target = document.querySelector(a.getAttribute('href'));
-          if (target) { e.preventDefault(); lenis.scrollTo(target, { offset: -80 }); }
-        });
-      });
 
       // Pause lenis while mobile menu is open to avoid conflicts
       document.getElementById('hamburger').addEventListener('click', () => {
