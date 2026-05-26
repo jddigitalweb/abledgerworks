@@ -77,7 +77,7 @@
 
       <div>
         <img src="logo.png" alt="AB LedgerWorks" class="footer-logo-img">
-        <p class="footer-brand-desc">Your offshore finance partner — delivering precision accounting, CFO-level advisory, and scalable financial solutions to US and global businesses.</p>
+        <p class="footer-brand-desc">Your offshore partner — delivering precision accounting, CFO-level advisory, and scalable financial solutions to US and global businesses.</p>
         <div class="footer-social">
           <a href="https://www.linkedin.com/company/ab-ledgerworks-llp/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="mailto:info@abledgerworks.com" title="Email" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
@@ -114,8 +114,8 @@
           <a href="mailto:info@abledgerworks.com">info@abledgerworks.com</a>
         </div>
         <div class="footer-contact-item">
-          <i class="fa-brands fa-whatsapp contact-icon"></i>
-          <a href="https://wa.me/918905313301" target="_blank">+91 8905313301</a>
+          <i class="fa-solid fa-phone contact-icon"></i>
+          <a href="tel:+918905313301">+91 8905313301</a>
         </div>
         <div class="footer-contact-item">
           <i class="fa-solid fa-location-dot contact-icon"></i>
