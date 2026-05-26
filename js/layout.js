@@ -77,7 +77,7 @@
 
       <div>
         <img src="logo.png" alt="AB LedgerWorks" class="footer-logo-img">
-        <p class="footer-brand-desc">Your offshore partner — delivering precision accounting, CFO-level advisory, and scalable financial solutions to US and global businesses.</p>
+        <p class="footer-brand-desc">Your offshore partner, delivering precision accounting, CFO-level advisory, and scalable financial solutions to US and global businesses.</p>
         <div class="footer-social">
           <a href="https://www.linkedin.com/company/ab-ledgerworks-llp/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="mailto:info@abledgerworks.com" title="Email" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
