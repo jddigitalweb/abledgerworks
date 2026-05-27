@@ -163,7 +163,7 @@ nav.scrolled {
 nav .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 
 .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; flex-shrink: 0; order: 1; }
-.nav-logo-img { height: 48px; width: auto; object-fit: contain; }
+.nav-logo-img { height: 58px; width: auto; object-fit: contain; }
 
 .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; flex: 1; justify-content: center; order: 2; }
 .nav-item { position: relative; }
@@ -311,7 +311,7 @@ footer { background: var(--navy-deep); padding: 80px 0 32px; border-top: 1px sol
 @media (max-width: 768px) {
   nav { padding: 16px 0; }
   nav .container { padding: 0 20px; }
-  .nav-logo-img { height: 36px; }
+  .nav-logo-img { height: 44px; }
   .section { padding: 72px 0; }
   .footer-top { grid-template-columns: 1fr; gap: 36px; }
   .footer-brand-desc { max-width: 100%; }
